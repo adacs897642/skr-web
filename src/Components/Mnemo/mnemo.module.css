@@ -1,0 +1,17 @@
+.mnemo__img {
+    display: flex;
+    /*flex-direction: row;*/
+    /*width: 300px;*/
+    /*min-width: 100px;*/
+    /*max-width: 400px;*/
+}
+
+/*.mnemo__img > a > img {*/
+/*    min-width: 100px;*/
+/*    max-width: 400px;*/
+/*}*/
+
+.mnemo__title {
+    margin-left: 15px;
+    color: rgb(255, 150, 0);
+}

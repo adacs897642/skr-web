@@ -1,0 +1,28 @@
+
+._canvas{
+
+    background-image: url("/public/img/gpa.png");
+    background-repeat: no-repeat;
+    background-color: var(--memo-background-color);
+    background-size: contain;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+._title {
+    margin: 15px;
+    color: var(--title-color);
+    text-decoration: none;
+}
+._body{
+    text-decoration: none;
+}
+
+._body>a{
+    text-decoration: none;
+}
+._body>a:hover {
+    text-decoration: underline; /* Добавляем подчеркивание
+                                   при наведении курсора мыши на ссылку */
+    text-decoration-color: var(--title-color);
+}

@@ -1,0 +1,12 @@
+.main__page {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+     overflow-x: hidden;
+}
+.main__page::-webkit-scrollbar {
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+
+}

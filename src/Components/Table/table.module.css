@@ -1,0 +1,41 @@
+.div__table{
+    padding-top: 5px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    /*display: flex;*/
+}
+
+._ {
+    color: rgb(255, 255, 255);
+    border: solid 1px rgb(100, 100, 100);
+    border-collapse: collapse;
+    padding-top: 5px;
+    width: 100%;
+
+}
+._header {
+    background-color: rgb(40, 40, 40);
+    /*border: solid 1px rgb(100, 100, 100);*/
+}
+._body{
+    text-align: center;
+
+}
+._data {
+    /*color: rgb(255, 150, 0);*/
+    /*border: solid 1px rgb(100, 100, 100);*/
+}
+._th{
+        border: solid 1px rgb(100, 100, 100);
+     padding-top: .4rem;
+    padding-bottom: .4rem;
+    /*border-collapse: collapse;*/
+}
+
+._td{
+        border: solid 1px rgb(100, 100, 100);
+ padding-top: .4rem;
+    padding-bottom: .4rem;
+    /*border-collapse: collapse;*/
+}
+

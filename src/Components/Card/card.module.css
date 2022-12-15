@@ -1,0 +1,10 @@
+.body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px rgb(91, 91, 91) solid;
+    padding: 10px;
+    margin: 5px;
+}
+
+
