@@ -9,9 +9,10 @@ export const SyslogPage = () => {
 
     useEffect(() => {
     }, [])
-
+    const rootUrl = process.env.REACT_APP_MODE_ENV === 'production' ? "http://"+window.location.hostname+":5000":''
     useEffect(() => {
-        fetch(`/api/syslog?page=${page}&per_page=${limit}`)
+        console.log(rootUrl)
+        fetch(`${rootUrl}/api/syslog?page=${page}&per_page=${limit}`)
             .then(response => {
                 if (response.ok)
                     return (response.json())

@@ -91,32 +91,34 @@ export const ObjectPage = ({socket}) => {
         setIsAbsent(false)
     }
 
+    const rootUrl = process.env.REACT_APP_MODE_ENV === 'production' ? "http://"+window.location.hostname+":5000":''
 
     useEffect(() => {
+        console.log(rootUrl)
 
         fetchAndSetAll([
             {
-                url: `/api/describe?n=${objId}`,
+                url: `${rootUrl}/api/describe?n=${objId}`,
                 setter: setObj,
             },
             {
-                url: `/api/vlog?alias=Оп${objId}-1&end=${endTime}`,
+                url: `${rootUrl}/api/vlog?alias=Оп${objId}-1&end=${endTime}`,
                 setter: setData1,
             },
             {
-                url: `/api/vlog?alias=Оп${objId}-2&end=${endTime}`,
+                url: `${rootUrl}/api/vlog?alias=Оп${objId}-2&end=${endTime}`,
                 setter: setData2,
             },
             {
-                url: `/api/vlog?alias=Оп${objId}-3&end=${endTime}`,
+                url: `${rootUrl}/api/vlog?alias=Оп${objId}-3&end=${endTime}`,
                 setter: setData3,
             },
             {
-                url: `/api/vlog?alias=Оп${objId}-4&end=${endTime}`,
+                url: `${rootUrl}/api/vlog?alias=Оп${objId}-4&end=${endTime}`,
                 setter: setData4,
             },
             {
-                url: `/api/vlog?alias=Оп${objId}-5&end=${endTime}`,
+                url: `${rootUrl}/api/vlog?alias=Оп${objId}-5&end=${endTime}`,
                 setter: setData5,
             }
 

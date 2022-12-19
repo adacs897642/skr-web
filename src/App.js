@@ -12,7 +12,18 @@ import {ObjectPage} from "./Pages/ObjectPage";
 import {io} from "socket.io-client";
 import {TodoPage} from "./Pages/TodoPage";
 
-const socket = io("http://localhost:5000/");
+const rootUrl = process.env.REACT_APP_MODE_ENV === 'production' ? "http://"+window.location.hostname+":5000":'http://127.0.0.1:5000/'
+
+const socket = io(rootUrl, {
+    transports: ["websocket"],
+    cors: {
+        origin: "http://127.0.0.1:3000/",
+    },
+}
+);
+
+
+
 
 export function App() {
 
@@ -35,6 +46,7 @@ export function App() {
     ])
 
     useEffect(() => {
+
         // if(isConnected) return
         socket.on("connect", data => {
             console.log('connect', data, isConnected, new Date().getTime());
@@ -64,6 +76,8 @@ export function App() {
     }, [isConnected])
 
     useEffect(()=>console.log(isConnected), [isConnected])
+    let y = process.env.REACT_APP_MODE_ENV
+    console.log(y)
 
     return (
         <>

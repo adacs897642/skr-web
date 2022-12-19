@@ -48,11 +48,11 @@ export const Syslog = ({socket}) => {
         observer.current = new IntersectionObserver(callback);
         observer.current.observe(lastElement.current)
     }, [isSyslogLoading])
-
+    const rootUrl = process.env.REACT_APP_MODE_ENV === 'production' ? "http://"+window.location.hostname+":5000":''
     const fetchSyslog = async (page, limit) => {
         try {
             setIsSyslogLoading(true)
-            const response = await fetch(`/api/syslog?page=${page}&per_page=${limit}`)
+            const response = await fetch(`${rootUrl}/api/syslog?page=${page}&per_page=${limit}`)
             console.log(response.headers.get('x-total-count'))
             setTotalCount(parseInt(response.headers.get('x-total-count')))
             const data = await response.json()

@@ -15,11 +15,11 @@ export const Card = ({item, socket}) => {
             }
         );
     }, [socket])
-
+    const rootUrl = process.env.REACT_APP_MODE_ENV === 'production' ? "http://"+window.location.hostname+":5000":''
     useEffect(() => {
         if(!isNeedUpdate) return
         console.log('send request')
-        fetch(`http://127.0.0.1:5000/api/describe?n=${item}`)
+        fetch(`${rootUrl}/api/describe?n=${item}`)
             .then(response => {
                 if (response.ok)
                     return response.json()
